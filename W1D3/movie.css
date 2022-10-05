@@ -1,0 +1,128 @@
+.banner {
+  background-image: url("bannerbg.png");
+  background-repeat: repeat-x;
+  text-align: center;
+  height: 50px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 8pt;
+  font-family: Verdana, Tahoma, sans-serif;
+  background-image: url("background.png");
+}
+
+h1 {
+  font-size: 24pt;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: #999999 3px 3px;
+}
+
+.container {
+  position: relative;
+  width: 800px;
+  margin: 0 auto;
+  border: solid 4px gray;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.left-pane {
+  float: left;
+  width: 550px;
+}
+
+.right-pane {
+  float: right;
+  background-color: #A2B964;
+  width: 250px;
+  font-family: Arial, sans-serif;
+}
+
+.right-pane dl {
+  padding: 0 10px;
+}
+
+.right-pane dl dt {
+  font-weight: bold;
+  margin-top: 10pt;
+}
+
+.right-pane ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.overall-score-pane {
+  background-image: url("rbg.png");
+  background-repeat: repeat-x;
+  font-size: 48pt;
+  color: red;
+  font-weight: bold;
+  padding: 0;
+}
+
+.overall-score-pane span {
+  vertical-align: middle;
+}
+
+.overall-score-pane img {
+  vertical-align: top;
+}
+
+.comment-container {
+  padding: 2%;
+  column-count: 2;
+  column-gap: 2%;
+}
+
+.comment-container > p:nth-child(2n+1) {
+  font-size: 8pt;
+  font-weight: bold;
+  background-color: #E8DC9B;
+  border: solid 2px gray;
+  border-radius: 10px;
+  padding: 8px;
+  margin: 0;
+}
+
+.comment-container > p:nth-child(2n+1):not(:first-child) {
+  margin-top: 20pt;
+}
+
+.comment-container > p:nth-child(2n+1) img {
+  margin-right: 5px;
+  float: left;
+}
+
+.comment-container > p:nth-child(2n+1) q {
+  clear: both;
+}
+
+.comment-container > p:nth-child(2n) span {
+  font-style: italic;
+}
+
+.comment-container > p:nth-child(2n) img {
+  float: left;
+  margin-right: 5px;
+}
+
+.pagination-container {
+  background-color: #A2B964;
+  text-align: center;
+  padding: 5px;
+  clear: both;
+  margin: 0;
+}
+
+.validation-badge-container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  opacity: .5;
+  float: right;
+}
