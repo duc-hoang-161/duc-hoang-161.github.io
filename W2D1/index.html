@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Testing with Mocha and Chai</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+  <script>
+    // initialize mocha
+    mocha.setup('bdd');
+    // chai has a lot of stuff, let's make assert global
+    let assert = chai.assert;
+
+    /* max returns the maximum of 2 arguments */
+    function max(a, b) {
+      if (a > b) {
+        return a;
+      } else {
+        return b;
+      }
+      ;
+    }
+    describe("max", function () {
+      it("takes 2 numbers, and returns the greater number",
+        function () {
+          assert.equal(20, max(20, 10));
+          assert.equal(20, max(20, -10));
+          assert.equal(-10, max(-20, -10));
+        });
+    });
+
+    /* max3 takes 3 numbers as arguments and returns the largest */
+    function maxOfThree(a, b, c) {
+      return [b, c].reduce((result, n) => result > n ? result : n, a);
+    }
+    describe("maxOfThree", function () {
+      it("takes 3 numbers, and returns the max number",
+        function () {
+          assert.equal(44, maxOfThree(5, 4, 44));
+          assert.equal(55, maxOfThree(55, 4, 44));
+          assert.equal(55, maxOfThree(55, 4, 44));
+          assert.equal(55, maxOfThree(4, 55, 44));
+          assert.equal(44, maxOfThree(44, -55, 44));
+        });
+    });
+
+    function isVowel(c) {
+      if (typeof c !== 'string' || c.length !== 1) return false;
+      //A, E, I, O, U, and sometimes W and Y
+      return !!['a', 'e', 'i', 'o', 'u', 'w', 'y'].filter(v => v === c.toLowerCase()).length;
+    }
+    describe("isVowel", function () {
+      it("takes a parameter, and returns false if it is not a vowel",
+        function () {
+          assert.equal(false, isVowel("!"));
+          assert.equal(false, isVowel("m"));
+          assert.equal(false, isVowel(4));
+          assert.equal(false, isVowel());
+          assert.equal(false, isVowel("hi"));
+        });
+      it("takes a character, and returns true if it is not a vowel",
+        function () {
+          assert.equal(true, isVowel("A"));
+          assert.equal(true, isVowel("a"));
+          assert.equal(true, isVowel("E"));
+          assert.equal(true, isVowel("e"));
+          assert.equal(true, isVowel("I"));
+          assert.equal(true, isVowel("i"));
+          assert.equal(true, isVowel("O"));
+          assert.equal(true, isVowel("o"));
+          assert.equal(true, isVowel("U"));
+          assert.equal(true, isVowel("u"));
+        });
+    });
+
+    function sum(arr) {
+      return arr.reduce((s, n) => s + n, 0);
+    }
+    describe("sum", function () {
+      it("takes an array and returns the sum of every elements in array", function () {
+        assert.equal(0, sum([]));
+        assert.equal(1, sum([1]));
+        assert.equal(15, sum([1, 2, 3, 4, 5]));
+        assert.equal(0, sum([-1, 1, -2, 2, -3, 3]));
+      })
+    });
+
+    function multiply(arr) {
+      if (!arr.length) return 0;
+      return arr.reduce((m, n) => m * n, 1);
+    }
+    describe("multiply", function () {
+      it("takes an array and returns the multiply of every elements in array", function () {
+        assert.equal(0, multiply([]));
+        assert.equal(1, multiply([1]));
+        assert.equal(1, multiply([1, -1, 1, -1]));
+        assert.equal(24, multiply([1, 2, 3, 4]));
+        assert.equal(0, multiply([-1, 1, 0, 2, -3, 3]));
+      })
+    });
+
+    function reverse(str) {
+      if (!str.length) return '';
+      return [...str].reduce((r, c) => [c, ...r], []).join("");
+    }
+    describe("reverse", function () {
+      it("takes a string and returns the reversal of the string", function () {
+        assert.equal('', reverse(''));
+        assert.equal('a', reverse('a'));
+        assert.equal('olleH', reverse('Hello'));
+        assert.equal('!ecnetnes-A-si-sihT', reverse('This-is-A-sentence!'));
+      });
+    });
+
+    function findLongestWord(arr) {
+      return arr.reduce((r, w) => Math.max(r, w.length), 0);
+    }
+    describe("findLongestWord", function () {
+      it("takes an array and returns the length of longest word", function () {
+        assert.equal(0, findLongestWord([]));
+        assert.equal(5, findLongestWord(['hello', 'hi']));
+        assert.equal(7, findLongestWord(['long', 'short', 'longer', 'shorter']));
+      });
+    });
+
+    function filterLongWords(arr, i) {
+      return arr.filter(w => w.length > i);
+    }
+    describe("filterLongWords", function () {
+      it("takes an array of string and a number i and returns the array of words that are longer than i", function () {
+        assert.deepEqual([], filterLongWords([], 1));
+        assert.deepEqual(['hello'], filterLongWords(['hello', 'hi'], 2));
+        assert.deepEqual(['short', 'longer', 'shorter'], filterLongWords(['long', 'short', 'longer', 'shorter'], 4));
+      });
+    });
+  </script>
+</head>
+<body>
+<div id="mocha"></div>
+<script>
+  mocha.run();
+</script>
+
+</body>
+</html>

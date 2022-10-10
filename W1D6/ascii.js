@@ -57,7 +57,7 @@ window.onload = function () {
   }
 
   function runAnimation() {
-    if (stopBtn.disabled) return;
+    if (stopBtn.disabled) {return;}
     stopAnimation();
     textArea.style.fontSize = SIZE[getFontSize()];
     animation = getFrames(ANIMATIONS[getCurrentAnimation()]);
