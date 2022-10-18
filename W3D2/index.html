@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clean Screen</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="script.js"></script>
+  <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="form">
+  <label for="width">Width</label>
+  <input class="form-control" type="number" min="1" value="50" name="width" id="width"/>
+  <label for="growth">Growth</label>
+  <input class="form-control" type="number" name="growth" value="10" min="1" id="growth"/>
+  <label for="interval">Interval</label>
+  <input class="form-control" type="number" value="250" min="1" name="interval" id="interval"/>
+  <label for="number-circle">Number Circles</label>
+  <input class="form-control" type="number" value="5" min="1" name="number-circle" id="number-circle"/>
+  <button class="btn btn-primary" id="start">Start</button>
+</div>
+</body>
+</html>
