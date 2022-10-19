@@ -1,10 +1,10 @@
 describe("String filter", function () {
   it("Filter function should filter out banned word", function () {
-    assert('This is a house', 'This is not a house'.filter('not'));
-    assert('This not joke. It truth.', 'This is not a joke. It is a truth.'.filter('is').filter('a'));
+    assert("This is a house", "This is not a house".filter("not"));
+    assert("This not joke. It truth.", "This is not a joke. It is a truth.".filter("is").filter("a"));
   });
-  it("Filter function should not filter out word if it doesn't exist in the string", function () {
-    assert('This should be the same', 'This should be the same'.filter('is').filter('a'));
+  it("Filter function should not filter out word if it doesn"t exist in the string", function () {
+    assert("This should be the same", "This should be the same".filter("is").filter("a"));
   })
 });
 

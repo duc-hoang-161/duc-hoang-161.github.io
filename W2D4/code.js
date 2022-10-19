@@ -2,7 +2,7 @@
  Q1
  */
 String.prototype.filter = function (word) {
-  return this.split(" ").filter(w => w !== word).join(' ');
+  return this.split(" ").filter(w => w !== word).join(" ");
 }
 /*
  Q2

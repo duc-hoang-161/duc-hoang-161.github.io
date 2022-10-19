@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 (function($) {
   let intervalId;
   function randomNumber(min, max) {
@@ -6,21 +6,21 @@
   }
 
   function getRandomColor() {
-    const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
+    const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"];
     return `#${Array(6)
-      .fill('')
+      .fill("")
       .map(() => hex[randomNumber(0, hex.length - 1)])
-      .join('')}`;
+      .join("")}`;
   }
 
   function reset() {
     clearInterval(intervalId);
-    $('#start').prop('disabled', false);
+    $("#start").prop("disabled", false);
   }
 
   function onClickCircle() {
     $(this).remove();
-    if (!$('.circle').length) reset();
+    if (!$(".circle").length) reset();
   }
 
   function getRandomPosition() {
@@ -33,7 +33,7 @@
   }
 
   function growCircles(growth, interval) {
-    $('.circle').each(function() {
+    $(".circle").each(function() {
       $(this).stop();
       $(this).animate(
         {
@@ -50,8 +50,8 @@
     let listDivs = $();
     for (let i = 0; i < number; i++) {
       listDivs = listDivs.add(
-        $('<div>', {
-          class: 'circle',
+        $("<div>", {
+          class: "circle",
           css: {
             width,
             backgroundColor: getRandomColor(),
@@ -61,7 +61,7 @@
         }),
       );
     }
-    $('body').append(listDivs);
+    $("body").append(listDivs);
     intervalId = setInterval(() => growCircles(growth, interval), interval);
   }
 
@@ -71,17 +71,17 @@
 
   function start() {
     const options = {
-      width: getInputNumberValue('#width'),
-      growth: getInputNumberValue('#growth'),
-      interval: getInputNumberValue('#interval'),
-      number: getInputNumberValue('#number-circle'),
+      width: getInputNumberValue("#width"),
+      growth: getInputNumberValue("#growth"),
+      interval: getInputNumberValue("#interval"),
+      number: getInputNumberValue("#number-circle"),
     };
-    $(this).prop('disabled', true);
+    $(this).prop("disabled", true);
     addCircles(options);
   }
 
   function init() {
-    $('#start').click(start);
+    $("#start").click(start);
   }
 
   window.onload = init;

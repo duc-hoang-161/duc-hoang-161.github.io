@@ -8,8 +8,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
   <script>
     // initialize mocha
-    mocha.setup('bdd');
-    // chai has a lot of stuff, let's make assert global
+    mocha.setup("bdd");
+    // chai has a lot of stuff, let"s make assert global
     let assert = chai.assert;
 
     /* max returns the maximum of 2 arguments */
@@ -46,9 +46,9 @@
     });
 
     function isVowel(c) {
-      if (typeof c !== 'string' || c.length !== 1) return false;
+      if (typeof c !== "string" || c.length !== 1) return false;
       //A, E, I, O, U, and sometimes W and Y
-      return !!['a', 'e', 'i', 'o', 'u', 'w', 'y'].filter(v => v === c.toLowerCase()).length;
+      return !!["a", "e", "i", "o", "u", "w", "y"].filter(v => v === c.toLowerCase()).length;
     }
     describe("isVowel", function () {
       it("takes a parameter, and returns false if it is not a vowel",
@@ -101,15 +101,15 @@
     });
 
     function reverse(str) {
-      if (!str.length) return '';
+      if (!str.length) return "";
       return [...str].reduce((r, c) => [c, ...r], []).join("");
     }
     describe("reverse", function () {
       it("takes a string and returns the reversal of the string", function () {
-        assert.equal('', reverse(''));
-        assert.equal('a', reverse('a'));
-        assert.equal('olleH', reverse('Hello'));
-        assert.equal('!ecnetnes-A-si-sihT', reverse('This-is-A-sentence!'));
+        assert.equal("", reverse(""));
+        assert.equal("a", reverse("a"));
+        assert.equal("olleH", reverse("Hello"));
+        assert.equal("!ecnetnes-A-si-sihT", reverse("This-is-A-sentence!"));
       });
     });
 
@@ -119,8 +119,8 @@
     describe("findLongestWord", function () {
       it("takes an array and returns the length of longest word", function () {
         assert.equal(0, findLongestWord([]));
-        assert.equal(5, findLongestWord(['hello', 'hi']));
-        assert.equal(7, findLongestWord(['long', 'short', 'longer', 'shorter']));
+        assert.equal(5, findLongestWord(["hello", "hi"]));
+        assert.equal(7, findLongestWord(["long", "short", "longer", "shorter"]));
       });
     });
 
@@ -130,8 +130,8 @@
     describe("filterLongWords", function () {
       it("takes an array of string and a number i and returns the array of words that are longer than i", function () {
         assert.deepEqual([], filterLongWords([], 1));
-        assert.deepEqual(['hello'], filterLongWords(['hello', 'hi'], 2));
-        assert.deepEqual(['short', 'longer', 'shorter'], filterLongWords(['long', 'short', 'longer', 'shorter'], 4));
+        assert.deepEqual(["hello"], filterLongWords(["hello", "hi"], 2));
+        assert.deepEqual(["short", "longer", "shorter"], filterLongWords(["long", "short", "longer", "shorter"], 4));
       });
     });
   </script>

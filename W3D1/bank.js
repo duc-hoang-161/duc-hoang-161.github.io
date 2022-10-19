@@ -1,4 +1,4 @@
-'use strict'
+"use strict"
 
 class Bank {
   #accounts;
@@ -32,10 +32,10 @@ class Bank {
   }
 
   accountReport(){
-    return this.#accounts.map(acc => acc.toString()).join('\n');
+    return this.#accounts.map(acc => acc.toString()).join("\n");
   }
 
   endOfMonth(){
-    return this.#accounts.map(acc => acc.endOfMonth()).filter(Boolean).join('\n');
+    return this.#accounts.map(acc => acc.endOfMonth()).filter(Boolean).join("\n");
   }
 }

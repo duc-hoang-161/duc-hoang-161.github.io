@@ -1,4 +1,4 @@
-'user strict'
+"user strict"
 
 class CheckingAccount extends Account {
   constructor (number, overdraftLimit) {

@@ -17,7 +17,7 @@ class Account {
   }
 
   /**
-   * Getter for the 'private' number field
+   * Getter for the "private" number field
    *
    * @returns {number} the account number
    */
@@ -26,7 +26,7 @@ class Account {
   }
 
   /**
-   * Accessor for the 'private' balance field
+   * Accessor for the "private" balance field
    *
    * @returns {number} balance for this account
    */

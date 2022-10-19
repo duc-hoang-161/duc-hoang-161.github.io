@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 class Savingsaccount extends Account{
   constructor (number, interest) {

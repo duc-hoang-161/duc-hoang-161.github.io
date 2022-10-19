@@ -1,4 +1,4 @@
-'use strict'
+"use strict"
 
 class Clock {
   timer
@@ -11,18 +11,18 @@ class Clock {
     let date = new Date()
 
     let hours = date.getHours()
-    if (hours < 10) hours = '0' + hours
+    if (hours < 10) hours = "0" + hours
 
     let mins = date.getMinutes()
-    if (mins < 10) mins = '0' + mins
+    if (mins < 10) mins = "0" + mins
 
     let secs = date.getSeconds()
-    if (secs < 10) secs = '0' + secs
+    if (secs < 10) secs = "0" + secs
     console.log(this)
     let output = this.template
-      .replace('h', hours)
-      .replace('m', mins)
-      .replace('s', secs)
+      .replace("h", hours)
+      .replace("m", mins)
+      .replace("s", secs)
 
     console.log(output)
   }
@@ -38,7 +38,7 @@ class Clock {
 }
 
 //
-// let clock = new Clock({ template: 'h:m:s' })
+// let clock = new Clock({ template: "h:m:s" })
 // clock.start()
 //
 // class Animal {
@@ -57,7 +57,7 @@ class Clock {
 //   }
 // }
 //
-// let rabbit = new Rabbit('White Rabbit') // Error: this is not defined
+// let rabbit = new Rabbit("White Rabbit") // Error: this is not defined
 // alert(rabbit.name)
 
 class ExtendedClock extends Clock {
@@ -72,5 +72,5 @@ class ExtendedClock extends Clock {
   }
 }
 
-const clock = new ExtendedClock({ template: 'h:m:s', precision: 3000 })
+const clock = new ExtendedClock({ template: "h:m:s", precision: 3000 })
 clock.start()
