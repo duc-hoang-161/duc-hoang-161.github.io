@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= product ? product.name : 'Not found' %></title>
+    <%- include('fragments/bootstrap.ejs') %>
+</head>
+<body>
+<%- include('fragments/menu.ejs', {pageId: 3, productLines}) %>
+<div class="container text-center">
+    <% if(product) { %>
+        <div class="row justify-content-md-center">
+            <div class="col-6">
+                <h1><%= product.name %></h1>
+                <image src="<%= product.image %>" alt="<%= product.name %>"/>
+                <p class="p-3"><%= product.description %></p>
+            </div>
+            <div class="col-3 p-2">
+                <form action="/addToCart" method="post" class="col col-8">
+                    <h3>Price: $<%= product.price %></h3>
+                    <input type="hidden" type="text" name="name" value="<%= product.name %>">
+                    <input type="hidden" type="text" name="price" value="<%= product.price %>">
+                    <input type="hidden" type="text" name="id" value="<%= product.id %>">
+                    <button type="submit" class="btn btn-primary">+ Add to cart</button>
+                </form>
+            </div>
+        </div>
+    <% }else{ %>
+        <div class="alert alert-danger" role="alert">
+            Sorry, we cannot find your product.
+        </div>
+    <% } %>
+</div>
+</body>
+</html>
