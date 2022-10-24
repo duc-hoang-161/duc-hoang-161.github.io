@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">W3D6</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link <%= pageId == 1 ? 'active' : '' %>" aria-current="page" href="/">Shop</a>
+                </li>
+            </ul>
+            <span class="navbar-text m-y-3">
+                <a class="nav-link <%= pageId == 2 ? 'active' : '' %>" aria-current="page" href="/cart">
+                    <button type="button" class="btn btn-info position-relative">🛒 Cart
+                        <% const total = productLines && productLines.reduce((total, p) => total + p.quantity, 0) %>
+                        <% if(total){ %>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            <%= total %>
+                            </span>
+                        <% } %>
+                    </button>
+                </a>
+            </span>
+        </div>
+    </div>
+</nav>
