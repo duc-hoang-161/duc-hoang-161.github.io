@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computer Shop</title>
+    <%- include('fragments/script.ejs') %>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<%- include('fragments/menu.ejs', {pageId: 1, productLines}) %>
+<div class="container text-center">
+    <h1>Products</h1>
+    <div class="row justify-content-md-center">
+        <% for(const product of products) { %>
+            <div class="col col-2">
+                <div class="card p-1">
+                    <img src="<%= product.image %>" class="card-img-top" alt="<%= product.name %>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= product.name %></h5>
+                        <p class="card-text">Price: $<%= product.price %></p>
+                    </div>
+                    <div class="card-body text-center">
+                        <a href="/detail?id=<%= product.id %>" class="card-link btn btn-success">Details</a>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>
+</body>
+</html>
